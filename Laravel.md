@@ -80,9 +80,9 @@
 <small style="color:grey;font-size:13px"><span style="color:#000"></span>E.g.: php artisan make:controller BookController <span style="color:#000">--resource</span></small>
 
 ```
-    Route::resource('filmes', 'App\Http\Controllers\MovieController')
-    ->names('movie')
-    ->parameters(['filmes' => 'movie']);
+    Route::resource('filmes', 'App\Http\Controllers\MovieController')   // URI
+    ->names('movie')                                                    // <example>.index
+    ->parameters(['filmes' => 'movie']);                                // '{example}' => 'movie'
 ```
 
 <small style="color:grey;font-size:13px"><span style="color:#000">index</span> - Show all (listing)</small>
@@ -126,12 +126,17 @@ Route::options($uri, $callback);
 
 <hr>
 
-# public function show($id) { ... } //shorter way
-# same as
-# public function show(Product $product)
+> public function show($id) { ... } //shorter way
+> same as
+> public function show(Product $product)
 { 
     $product = Product::findOrFail($id); //dont need to
 }
+
+> use Illuminate\Support\Facades\Route;
+> Change laravel's URI pattern
+> Route::resourceVerbs(['create' => 'adicionar', 'edit' => 'editar']);
+
 
 <hr>
 
@@ -186,6 +191,28 @@ Route::options($uri, $callback);
 ```
 
 - Go to localhost:8000
+
+### Using Image Intervantion
+
+> Used to resize image once uploaded
+
+```cmd
+    composer require intervention/image
+```
+
+Register package into $providers
+on config/app.php
+
+Intervention\Image\ImageServiceProvider::class
+
+$aliases
+
+'Image' => Intervention\Image\Facades\Image::class
+// in order to make path shorter
+
+use Image;
+// Controller
+
 
 [documentation]: https://laravel.com/docs/
 [composer]: https://getcomposer.org/
