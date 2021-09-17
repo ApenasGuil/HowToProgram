@@ -180,19 +180,19 @@ Route::options($uri, $callback);
 
 - Run the following commands
 
-<small style="color:grey;font-size:13px"><span style="color:	#000">key:generate</span> - Used to define a new key on .env file, after cloning a Laravel project;</small>
+<small style="color:grey;font-size:13px"><span style="color:#000">key:generate</span> - Used to define a new key on .env file, after cloning a Laravel project;</small>
 
 ```cmd
     php artisan key:generate
 ```
 
-<small style="color:grey;font-size:13px"><span style="color:	#000">migrate</span> - Used to run database tables</small>
+<small style="color:grey;font-size:13px"><span style="color:#000">migrate</span> - Used to run database tables</small>
 
 ```cmd
     php artisan migrate
 ```
 
-<small style="color:grey;font-size:13px"><span style="color:	#000">serve</span> - Used to start a server</small>
+<small style="color:grey;font-size:13px"><span style="color:#000">serve</span> - Used to start a server</small>
 
 ```cmd
     php artisan serve
