@@ -1,8 +1,23 @@
 > This is a simplefied documentation according to **MY NEEDS** and in order to facilitate **MY LIFE** when programming in Laravel. Yet you must check the complete [oficial documentation][documentation]
 
+### Summary
+
+- <a href="#program.installation">Programs Installation</a>
+- <a href="#project.create">Crate project</a>
+  - <a href="#project.view">Create view</a>
+- <a href="#project.controller">Create controller</a>
+  - <a href="#project.controller.function">Controller functions</a>
+  - <a href="#project.controller.resource">Controller with resource</a>
+- <a href="#project.routing">Routing</a>
+  - <a href="#project.routing.resource">Route Resource</a>
+- <a href="#project.view.components">Create component</a>
+- <a href="#project.db.get">Retrieving data from database</a>
+- <a href="#">a</a>
+- <a href="#project.cloning">Cloning project</a>
+
 <hr>
 
-### Instalation
+### <span id="program.installation">Programs installation</span>
 
 - Mandatory
     - [Composer][composer]
@@ -16,7 +31,7 @@
 
 <hr>
 
-### Creating project
+> ### <span id="project.create">[Creating project][project.create]</span>
 
 - Via Laravel Installer
 
@@ -34,7 +49,7 @@
 
 <hr>
 
-> #### [Creating view][view]
+> ### <span id="project.view">[Creating view][project.view]</span>
 
 <small style="color:grey;font-size:13px">create new file on <span style="color:#000">resources/views/</span></small>
 
@@ -42,9 +57,7 @@
     <file_name>.blade.php
 ```
 
-<hr>
-
-> ##### [Extending a master layout][extending]
+#### [Extending a master layout][project.view.extending]
 
 <small style="color:grey;font-size:13px">create new view and <span style="color:#000">extend it on any other view</span></small>
 
@@ -54,7 +67,7 @@
 
 <hr>
 
-> #### [Creating controller][controller]
+> ### <span id="project.controller">[Creating controller][project.controller]</span>
 
 ```cmd
     php artisan make:controller <singular_name>Controller
@@ -62,9 +75,15 @@
 
 <small style="color:grey;font-size:13px">E.g. php artisan make:controller <span style="color:#000">Book</span>Controller</small>
 
-<hr>
+#### <span id="project.controller.function">[Controller functions][project.controller.function]</span>
 
-#### Creating controller with resource
+<small style="color:grey;font-size:13px">add new function to <span style="color:#000">app/Http/Controllers/<\controller></span></small>
+
+```
+    public function index() { ... }
+```
+
+#### <span id="project.controller.resource">[Controller with resource][project.controller.resource]</span>
 
 ```cmd
     php artisan make:controller <singular_name>Controller --resource --model=<model_name>
@@ -74,7 +93,19 @@
 
 <hr>
 
-> #### [Route Resource][resource]
+> ### <span id="project.routing">[Routing][project.routing]</span>
+
+<small style="color:grey;font-size:13px">add new route to <span style="color:#000">routes/web.php</span></small>
+
+Route::get($uri, $callback);
+Route::post($uri, $callback);
+Route::put($uri, $callback);
+Route::patch($uri, $callback);
+Route::delete($uri, $callback);
+Route::options($uri, $callback);
+
+
+#### <span id="project.routing.resource">[Route Resource][project.routing.resource]</span>
 
 <small style="color:grey;font-size:13px">create a Controller with <span style="color:#000">--resource</span> param, then use <span style="color:#000">Route::resource</span> on <span style="color:#000">routes/web.php</span></small>
 <small style="color:grey;font-size:13px"><span style="color:#000"></span>E.g.: php artisan make:controller BookController <span style="color:#000">--resource</span></small>
@@ -95,34 +126,11 @@
 
 <hr>
 
-> #### [Creating function on controller][function]
-
-<small style="color:grey;font-size:13px">add new function to <span style="color:#000">app/Http/Controllers/<\controller></span></small>
-
-```
-    public function index() { ... }
-```
+#### <span id="project.view.components"></span>[Create component][project.view.component]
 
 <hr>
 
-> #### [Creating routing][routing]
-
-<small style="color:grey;font-size:13px">add new route to <span style="color:#000">routes/web.php</span></small>
-
-Route::get($uri, $callback);
-Route::post($uri, $callback);
-Route::put($uri, $callback);
-Route::patch($uri, $callback);
-Route::delete($uri, $callback);
-Route::options($uri, $callback);
-
-<hr>
-
-> #### [Creating components][components]
-
-<hr>
-
-> #### [Get data from DB][first]
+#### <span id="project.db.get">[Retrieving data from database][first]
 
 <hr>
 
@@ -140,7 +148,7 @@ Route::options($uri, $callback);
 
 <hr>
 
-### Set Laravel enviroment after cloning project
+> ### <span id="project.cloning">[Setting Laravel enviroment after cloning project from GitHub][project.cloning]</span>
 
 - Clone your project
 
@@ -219,11 +227,13 @@ use Image;
 [laravel]: https://laravel.com/
 [phpstorm]: https://www.jetbrains.com/phpstorm/
 [vscode]: https://code.visualstudio.com
-[view]: https://laravel.com/docs/8.x/views#creating-and-rendering-views
-[extending]: https://laravel.com/docs/8.x/blade#extending-a-layout
-[controller]: https://laravel.com/docs/8.x/controllers#basic-controllers
-[function]: https://laravel.com/docs/8.x/routing#the-default-route-files
-[routing]: https://laravel.com/docs/8.x/routing#basic-routing
-[resource]: https://laravel.com/docs/8.x/controllers#resource-controllers
-[components]: []
-[first]: []
+[project.create]: https://laravel.com/docs/8.x/installation#installation-via-composer
+[project.view]: https://laravel.com/docs/8.x/views#creating-and-rendering-views
+[project.view.extending]: https://laravel.com/docs/8.x/blade#extending-a-layout
+[project.controller]: https://laravel.com/docs/8.x/controllers#basic-controllers
+[project.controller.resource]: https://laravel.com/docs/8.x/controllers#resource-controllers
+[project.controller.function]: https://laravel.com/docs/8.x/routing#the-default-route-files
+[project.routing]: https://laravel.com/docs/8.x/routing#basic-routing
+[project.routing.resource]: https://laravel.com/docs/8.x/controllers#resource-controllers
+[project.view.component]: https://laravel.com/docs/8.x/blade#components
+[project.cloning]: https://stackoverflow.com/questions/38602321/cloning-laravel-project-from-github
